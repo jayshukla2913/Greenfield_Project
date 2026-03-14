@@ -35,7 +35,7 @@ module "ecs" {
 
   cluster_name     = "greenfield-cluster"
   target_group_arn = module.alb.target_group_arn
-  security_groups  = module.security.ecs_sg
+  security_group  = module.security.ecs_sg
   container_port   = var.container_port
 }
 
