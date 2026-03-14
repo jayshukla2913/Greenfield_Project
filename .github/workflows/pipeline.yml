@@ -40,9 +40,9 @@ jobs:
 
    - name: Terraform Apply
      run: terraform apply -auto-approve
-      env:
-      TF_VAR_db_username: ${{ secrets.DB_USERNAME }}
-      TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
+     env:
+        TF_VAR_db_username: ${{ secrets.DB_USERNAME }}
+        TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
      working-directory: terraform-infra
 
    - name: Push Image
