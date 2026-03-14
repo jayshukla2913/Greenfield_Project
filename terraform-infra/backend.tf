@@ -5,7 +5,7 @@ terraform {
     bucket         = "greenfield-terraform-state-bucket"
     key            = "greenfield-project/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-lock"
+    use_lockfile   = true
     encrypt        = true
   }
 
