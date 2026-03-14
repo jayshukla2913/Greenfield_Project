@@ -6,6 +6,3 @@ output "service_name" {
   value = aws_ecs_service.service.name
 }
 
-variable "private_subnets" {
-  type = list(string)
-}
