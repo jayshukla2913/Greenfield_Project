@@ -12,7 +12,6 @@ module "vpc" {
 module "security" {
   source = "./modules/security"
   vpc_id = module.vpc.vpc_id
-  security_group = module.security.aws_security_group.alb_sg
 }
 
 module "ecr" {
