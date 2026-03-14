@@ -26,7 +26,7 @@ module "alb" {
 
   vpc_id          = module.vpc.vpc_id
   public_subnets  = module.vpc.public_subnets
-  security_groups = module.security.alb_sg
+  alb_sg = module.security.alb_sg
   container_port  = var.container_port
 }
 
