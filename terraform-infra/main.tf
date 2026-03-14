@@ -42,10 +42,11 @@ module "ecs" {
 module "rds" {
   source = "./modules/rds"
 
-  private_subnets    = module.vpc.private_subnets
-  ecs_security_group = module.security.ecs_sg
-  db_username        = var.db_username
-  db_password        = var.db_password
+  private_subnets = module.vpc.private_subnets
+  security_group  = module.security.rds_sg
+
+  db_username = var.db_username
+  db_password = var.db_password
 }
 
 module "ecr" {

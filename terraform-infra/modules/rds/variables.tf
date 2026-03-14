@@ -1,13 +1,18 @@
-variable "db_name" {
-  default = "greenfield"
+variable "private_subnets" {
+  description = "Private subnets for RDS"
+  type        = list(string)
 }
 
-variable "db_username" {}
+variable "security_group" {
+  description = "Security group for RDS"
+  type        = string
+}
 
-variable "db_password" {}
+variable "db_username" {
+  type = string
+}
 
-variable "vpc_id" {}
-
-variable "private_subnets" {}
-
-variable "security_group" {}
+variable "db_password" {
+  type      = string
+  sensitive = true
+}
