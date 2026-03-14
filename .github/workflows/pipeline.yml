@@ -28,7 +28,7 @@ jobs:
        docker build -t greenfield-app .
 
    - name: Terraform Init
-    run: terraform init
+     run: terraform init
 
    - name: Terraform Apply
      run: terraform apply -auto-approve
