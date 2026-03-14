@@ -3,7 +3,7 @@ variable "target_group_arn" {}
 variable "security_group" {}
 variable "container_port" {}
 
-variable "subnets" {
+variable "public_subnets" {
   description = "Public subnets for ECS service"
   type        = list(string)
 }
