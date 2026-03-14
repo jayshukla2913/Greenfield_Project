@@ -1,4 +1,4 @@
-resource "aws_iam_role" "ecs_task_execution" {
+resource "aws_iam_role" "ecs_task_execution_role" {
 
   name = "greenfield-ecs-task-execution-role"
 
@@ -26,6 +26,6 @@ resource "aws_iam_role_policy_attachment" "ecs_policy" {
 
 }
 
-output "ecs_task_execution_role" {
-    value = aws_iam_role.ecs_task_execution.arn
+output "ecs_task_execution_role_arn" {
+  value = aws_iam_role.ecs_task_execution_role.arn
 }
