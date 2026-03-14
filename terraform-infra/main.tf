@@ -37,6 +37,7 @@ module "ecs" {
   target_group_arn = module.alb.target_group_arn
   security_group  = module.security.ecs_sg
   container_port   = var.container_port
+  ecr_repository_url = module.ecr.repository_url
 }
 
 module "rds" {
