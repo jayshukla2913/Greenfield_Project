@@ -10,4 +10,4 @@ variable "vpc_id" {}
 
 variable "private_subnets" {}
 
-variable "ecs_security_group" {}
+variable "security_group" {}
