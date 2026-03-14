@@ -60,6 +60,7 @@ resource "aws_ecs_task_definition" "task" {
           awslogs-region        = var.aws_region
           awslogs-stream-prefix = "ecs"
         }
+        }
     }
   ])
 }
