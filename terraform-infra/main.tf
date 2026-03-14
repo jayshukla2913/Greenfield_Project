@@ -12,7 +12,7 @@ module "vpc" {
 module "security" {
   source = "./modules/security"
   vpc_id = module.vpc.vpc_id
-  ecs_security_group = module.security.aws_security_group.alb_sg
+  security_group = module.security.aws_security_group.alb_sg
 }
 
 module "ecr" {
@@ -54,7 +54,7 @@ module "rds" {
 
   vpc_id            = module.vpc.vpc_id
   private_subnets   = module.vpc.private_subnets
-  ecs_security_group = module.security.app_sg
+  security_group = module.security.app_sg
 
   db_username = var.db_username
   db_password = var.db_password
