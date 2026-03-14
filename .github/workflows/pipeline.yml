@@ -31,15 +31,18 @@ jobs:
      run: |
        docker tag greenfield-app:latest ${{ secrets.ECR_REPO }}:latest
 
+   - name: Push Image
+     run: |
+       docker push ${{ secrets.ECR_REPO }}:latest 
+
    - name: Setup Terraform
      uses: hashicorp/setup-terraform@v3
 
    - name: Terraform Init
      run: terraform init
+     working-directory: terraform-infra
 
    - name: Terraform Apply
      run: terraform apply -auto-approve
+     working-directory: terraform-infra
 
-   - name: Push Image
-     run: |
-       docker push $ECR_REPO:latest
