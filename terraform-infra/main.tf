@@ -32,7 +32,7 @@ module "alb" {
 
 module "ecs" {
   source = "./modules/ecs"
-  public_subnets  = module.vpc.public_subnets
+  subnets  = module.vpc.public_subnets
   cluster_name     = "greenfield-cluster"
   target_group_arn = module.alb.target_group_arn
   security_group  = module.security.ecs_sg
