@@ -7,6 +7,5 @@ output "service_name" {
 }
 
 variable "private_subnets" {
-  description = "Private subnets for ECS service"
-  type        = list(string)
+  type = list(string)
 }
