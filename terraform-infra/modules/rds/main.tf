@@ -13,10 +13,10 @@ resource "aws_db_instance" "mysql" {
   username = var.db_username
   password = var.db_password
 
-  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
+  db_subnet_group_name = module.vpc.aws_db_subnet_group.db_subnet_group.name
 
   vpc_security_group_ids = [
-    aws_security_group.rds_sg.id
+    module.security.aws_security_group.rds_sg.id
   ]
 
   multi_az = false
