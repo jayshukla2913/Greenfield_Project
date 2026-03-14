@@ -6,7 +6,7 @@ COPY Node_App/package*.json ./
 
 RUN npm install
 
-COPY Node_App. .
+COPY Node_App .
 
 EXPOSE 3000
 
