@@ -36,18 +36,6 @@ resource "aws_subnet" "private2" {
   availability_zone = "us-east-1b"
 }
 
-resource "aws_db_subnet_group" "db_subnet_group" {
-
-  name = "greenfield-db-subnet-group"
-
-  subnet_ids = var.private_subnets
-
-  tags = {
-    Name = "greenfield-db-subnet-group"
-  }
-
-}
-
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 }
