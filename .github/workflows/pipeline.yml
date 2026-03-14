@@ -27,16 +27,16 @@ jobs:
      run: |
        docker build -t greenfield-app .
 
-   - name: Tag Image
-     run: |
-       docker tag greenfield-app:latest $ECR_REPO:latest
-       
-   - name: Push Image
-     run: |
-       docker push $ECR_REPO:latest
-
    - name: Terraform Init
-     run: terraform init
+    run: terraform init
 
    - name: Terraform Apply
      run: terraform apply -auto-approve
+
+   - name: Tag Image
+     run: |
+       docker tag greenfield-app:latest $ECR_REPO:latest
+
+   - name: Push Image
+     run: |
+       docker push $ECR_REPO:latest
