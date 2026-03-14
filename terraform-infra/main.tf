@@ -32,6 +32,7 @@ module "alb" {
 
 module "ecs" {
   source = "./modules/ecs"
+  execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
   public_subnets  = module.vpc.public_subnets
   cluster_name     = "greenfield-cluster"
   target_group_arn = module.alb.target_group_arn

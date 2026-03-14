@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "task" {
   cpu                      = 256
   memory                   = 512
 
-  execution_role_arn = module.iam.aws_iam_role.ecs_task_execution.arn
+  execution_role_arn = var.execution_role_arn
 
   container_definitions = jsonencode([
     {

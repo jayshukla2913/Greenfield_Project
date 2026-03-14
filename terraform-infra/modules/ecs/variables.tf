@@ -12,3 +12,8 @@ variable "ecr_repository_url" {
   description = "ECR repository URL"
   type        = string
 }
+
+variable "execution_role_arn" {
+  description = "ECS task execution role ARN"
+  type        = string
+}
